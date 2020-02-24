@@ -8,25 +8,20 @@
         </div>
 
         <div>
-            <p>Published: 21.02.2020, 15:40</p>
-            <h2><a href="">My First Post</a></h2>
-            <p>
-                In one day I have been able to set up a blog, using Django Girls tutorial and framework.
-                Their step by step guide on how to do all this, was relatively simple to follow. I would reccomend
-                this to any beginners wanting to give coding a go for the first time. 
-            </p>
+
+
+        {% for post in posts %}
+            <div>
+                <p>published: {{ post.published_date }}</p>
+                <h2><a href="">{{ post.title }}</a></h2>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </div>
+        {% endfor %}
+
+
+
         </div>
 
-        <div>
-            <p>Published: 21.02.2020, 16:05</p>
-            <h2><a href="">My Second Post</a></h2>
-           
-            <p>
-                You can find the Django girls tutorial at tutorial.djangogirls.org if you want to give this a go.
-                It will take you step by step through everything, from downloading each part needed to what you need to type and the finished project.
-                I found this useful, if I was to do the hard work alone with no help I would have been googling for hours before even starting a download because I wouldn't know what to do,
-                but Django girls talk you through all of that.
-            </p>
-        </div>
+
     </body>
 </html>
